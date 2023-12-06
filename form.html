@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="formAdd">
+      <label for="">Email</label>
+      <input id="email" type="text" />
+      <label for="">Mật khẩu</label>
+      <input id="password" type="text" />
+      <button id="btnSubmit" type="submit">Submit</button>
+    </form>
+
+    <script>
+      const emailElement = document.getElementById("email");
+      const passwordElement = document.getElementById("password");
+      const btnSubmit = document.getElementById("btnSubmit");
+      const formElement = document.getElementById("formAdd");
+
+      // btnSubmit.addEventListener("click", (e) => {
+      //   // Ngăn chặn sự kiện load lại trang của form
+      //   e.preventDefault();
+      //   console.log("Email: ", emailElement.value);
+      //   console.log("Password: ", passwordElement.value);
+      // });
+
+      formElement.addEventListener("submit", (e) => {
+        // Ngăn chặn sự kiện load lại trang của form
+        e.preventDefault();
+        console.log("Email: ", emailElement.value);
+        console.log("Password: ", passwordElement.value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn-back-top {
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+        cursor: pointer;
+        height: 50px;
+        border-radius: 4px;
+        outline: none;
+        border: 1px solid transparent;
+        background-color: black;
+        color: #fff;
+        display: none;
+        transition: all 0.5s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading" class="">DOM event 1</h1>
+    <h1 id="heading" class="">DOM event 2</h1>
+
+    <ul class="list-item1">
+      <li onclick="getItem1()" class="item">Item 1</li>
+      <li ondblclick="getItem2()" class="item">Item 2</li>
+      <li class="item">Item3</li>
+    </ul>
+
+    <ul class="list-item2">
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item3</li>
+    </ul>
+
+    <input type="text" />
+    <input type="date" />
+
+    <input autofocus type="text" placeholder="Nhập tên" id="inputValue" />
+
+    <input value="Nam" checked name="gender" type="radio" /> Nam
+    <input value="Nữ" name="gender" type="radio" /> Nữ
+    <input value="Khác" name="gender" type="radio" /> Khác
+
+    <select id="country">
+      <option value="">-- Mời bạn nhập thành phố --</option>
+      <option value="hanoi">Hà Nội</option>
+      <option value="hanam">Hà Nam</option>
+      <option value="quangnam">Quảng Nam</option>
+      <option value="quangninh">Quảng Ninh</option>
+      <option value="ninhbinh">Ninh Bình</option>
+    </select>
+
+    <input value="dichoi" type="checkbox" /> Đi chơi
+    <input value="muasam" type="checkbox" /> Mua sắm
+    <input value="dabong" type="checkbox" /> Đá bóng
+    <input value="choigame" type="checkbox" /> chơi game
+
+    <button id="btnSubmit">Submit</button>
+
+    <button id="btnBackTop" class="btn-back-top">Top</button>
+
+    <script src="./js/index.js"></script>
+    <script>
+      const btnBackTop = document.getElementById("btnBackTop");
+
+      window.addEventListener("scroll", () => {
+        const heightCuurent = window.scrollY;
+        if (heightCuurent > 200) {
+          btnBackTop.style.display = "block";
+        } else {
+          btnBackTop.style.display = "none";
+        }
+      });
+
+      btnBackTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+  </body>
+</html>
