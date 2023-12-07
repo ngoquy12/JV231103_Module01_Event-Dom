@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        height: 100vh;
+        width: 100%;
+      }
+
+      .dark {
+        background-color: black;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="container">
+      <h1>Xin chào</h1>
+      <input id="switch" type="checkbox" />
+    </div>
+
+    <!-- Script -->
+    <script>
+      const container = document.getElementById("container");
+      const switchElement = document.getElementById("switch");
+
+      // Lắng nghe sự kiện change trong checkbox
+      switchElement.addEventListener("change", (event) => {
+        if (event.target.checked) {
+          container.classList.add("dark");
+        } else {
+          container.classList.remove("dark");
+        }
+      });
+    </script>
+  </body>
+</html>

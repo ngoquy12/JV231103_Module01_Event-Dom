@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="cancel">Hủy</button>
+    <button id="add">Thêm</button>
+
+    <form id="form" style="display: none">
+      <h3>Đăng ký</h3>
+      <label for="">Username</label>
+      <input type="text" />
+    </form>
+
+    <script>
+      const btnCancel = document.getElementById("cancel");
+      const btnAdd = document.getElementById("add");
+      const form = document.getElementById("form");
+
+      window.addEventListener("keydown", (e) => {
+        if (e.keyCode === 9) {
+          form.style.display = "block";
+        }
+
+        if (e.keyCode === 27) {
+          form.style.display = "none";
+        }
+      });
+
+      console.log();
+    </script>
+  </body>
+</html>

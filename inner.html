@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+      .text-red {
+        color: red;
+      }
+
+      .text-blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="heading-1"></h1>
+
+    <h1>Bảng user</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Địa chỉ</th>
+          <th colspan="2">Chức năng</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <tr>
+          <td>1</td>
+          <td>Nguyễn Văn A</td>
+          <td>Nam</td>
+          <td>22-12-2023</td>
+          <td>Hà Nội</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul id="listItem"></ul>
+
+    <h1>Bảng nhân viên</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Tên</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Địa chỉ</th>
+          <th colspan="2">Chức năng</th>
+        </tr>
+      </thead>
+      <tbody id="tbody1"></tbody>
+    </table>
+
+    <h3 id="heading3">
+      Bạn đã có <span style="display: none"> Tài khoản</span>
+    </h3>
+
+    <button class="btn">0</button>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <button class="btn">4</button>
+    <button class="btn">5</button>
+    <button class="btn">6</button>
+    <button class="btn">7</button>
+    <button class="btn">8</button>
+    <button class="btn">9</button>
+
+    <h4 id="heading-4">CSS By JS</h4>
+    <button id="btnRed">Màu đỏ</button>
+    <button id="btnBlue">Màu xanh</button>
+
+    <button id="hide">Ẩn</button>
+    <button id="show">Hiện</button>
+
+    <script src="./js/inner.js"></script>
+
+    <script>
+      let heading4 = document.querySelector("#heading-4");
+      let btnRed = document.getElementById("btnRed");
+      let btnBlue = document.getElementById("btnBlue");
+      let btnShow = document.getElementById("show");
+      let btnHide = document.getElementById("hide");
+
+      // Thêm class vào trong h4 khi click
+      btnRed.addEventListener("click", () => {
+        // Thêm class
+        heading4.classList.add("text-red");
+
+        // Xóa class khi element
+        heading4.classList.remove("text-blue");
+      });
+
+      btnBlue.onclick = () => {
+        // Kiểm tra xem 1 class có tồn tại trong 1 element không?
+        heading4.classList.add("text-blue");
+        console.log(heading4.classList.contains("text-blue"));
+      };
+
+      // Ẩn văn bản
+      btnHide.onclick = () => {
+        heading4.style.display = "none";
+      };
+
+      // Hiện văn bản
+      btnShow.onclick = () => {
+        heading4.style.display = "block";
+      };
+    </script>
+  </body>
+</html>
